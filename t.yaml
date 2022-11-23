@@ -12,13 +12,13 @@ build-parameters:
         - npx -p @sap/cds-dk cds build --production
         - npx rimraf gen/db/src/gen/data
 modules:
-  - name: bookshop-srv-dima
+  - name: bookshop-srvDIMA
     type: nodejs
     path: gen/srv
     parameters:
-      buildpack: nodejs_buildpack
       memory: 128M
       disk-quota: 256M
+      buildpack: nodejs_buildpack
     build-parameters:
       builder: npm-ci
     provides:
@@ -28,24 +28,24 @@ modules:
     requires:
       - name: bookshop-db
 
-  - name: bookshop-db-deployer-dima
+  - name: bookshop-db-deployerDIMA
     type: hdb
     path: gen/db
     parameters:
-      buildpack: nodejs_buildpack
       memory: 128M
       disk-quota: 128M
+      buildpack: nodejs_buildpack
     requires:
       - name: bookshop-db
 
-  - name: bookshop-approuter-dima
+  - name: bookshop-approuter
     type: approuter.nodejs
     path: approuter
-    parameters:
-      memory: 256M
-      disk-quota: 256M
     requires:
       - name: bookshop-destinationDIMA
+    parameters: 
+      disk-quota: 256M
+      memory: 256M
 
 resources:
   - name: bookshop-db
