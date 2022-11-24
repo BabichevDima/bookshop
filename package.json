@@ -9,7 +9,8 @@
     "@sap/cds": "^6",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.15",
     "express": "^4",
-    "hdb": "^0.19.5"
+    "hdb": "^0.19.5",
+    "uuid": "^7.0.3"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.102.12",

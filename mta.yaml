@@ -47,6 +47,32 @@ modules:
     requires:
       - name: bookshop-destinationDIMA
 
+  # - name: bookshop_ui_deployer
+  #   type: com.sap.application.content
+  #   path: .
+  #   requires:
+  #     - name: bookshop-html-repo_runtime-dima
+  #   parameters:
+  #     content-target: true
+  #   build-parameters:
+  #     build-result: resources
+  #     requires:
+  #       - artifacts:
+  #         - bookshop.zip
+  #         name: bookshopfe
+  #         target-path: resources/
+
+  # - name: bookshop-fe-dima
+  #   type: html5
+  #   path: app/bookshop-fe
+  #   build-parameters:
+  #     build-result: dist
+  #     builder: custom
+  #     commands:
+  #     - npm install
+  #     - npm run build:cf
+  #     supported-platform: []
+
 resources:
   - name: bookshop-db
     type: com.sap.xs.hdi-container
@@ -59,3 +85,9 @@ resources:
     parameters:
       service: destination
       service-plan: lite
+
+  # - name: bookshop-html-repo_runtime-dima
+  #   type: org.cloudfoundry.managed-service
+  #   parameters:
+  #     service: html5-apps-repo
+  #     service-plan: app-runtime
