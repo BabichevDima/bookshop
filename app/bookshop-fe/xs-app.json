@@ -2,9 +2,9 @@
     "authenticationMethod": "none",
     "routes": [
       {
-        "source": "^/bookshop/(.*)$",
+        "source": "^(/.*)$",
         "target": "$1",
-        "destination": "bookshop-dest"
+        "service": "html5-apps-repo-rt"
       }
     ]
 }
