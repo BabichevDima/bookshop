@@ -58,7 +58,7 @@ modules:
   #     build-result: resources
   #     requires:
   #       - artifacts:
-  #         - bookshop.zip
+  #         - bookshop-fe-dima.zip
   #         name: bookshop-fe-dima
   #         target-path: resources/
 
